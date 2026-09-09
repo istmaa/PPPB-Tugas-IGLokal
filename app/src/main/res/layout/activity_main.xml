@@ -1,19 +1,280 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Top Title Bar -->
+        <TextView
+            android:id="@+id/tvAppTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/app_title"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Circular Profile Picture -->
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/circle_background"
+            android:clipToOutline="true"
+            android:contentDescription="@string/cd_profile_picture"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAppTitle" />
+
+        <!-- Profile Information: Username -->
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/username"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imgProfile"
+            app:layout_constraintTop_toTopOf="@+id/imgProfile" />
+
+        <!-- Profile Information: Posts Count -->
+        <TextView
+            android:id="@+id/tvPosts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/posts_text"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tvUsername"
+            app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
+
+        <!-- Profile Information: Followers Count -->
+        <TextView
+            android:id="@+id/tvFollowers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/followers_text"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tvUsername"
+            app:layout_constraintTop_toBottomOf="@+id/tvPosts" />
+
+        <!-- Profile Information: Following Count -->
+        <TextView
+            android:id="@+id/tvFollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/following_text"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tvUsername"
+            app:layout_constraintTop_toBottomOf="@+id/tvFollowers" />
+
+        <!-- Bio: Profile Name -->
+        <TextView
+            android:id="@+id/tvProfileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/profile_name"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgProfile" />
+
+        <!-- Bio: Details -->
+        <TextView
+            android:id="@+id/tvBio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:lineSpacingExtra="3dp"
+            android:text="@string/bio_text"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfileName" />
+
+        <!-- Action Button: Edit Profile -->
+        <Button
+            android:id="@+id/btnEditProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="6dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minHeight="36dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="@string/btn_edit_profile"
+            android:textAllCaps="false"
+            android:textColor="@color/button_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/button_bg"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnShareProfile"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBio" />
+
+        <!-- Action Button: Share Profile -->
+        <Button
+            android:id="@+id/btnShareProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="16dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minHeight="36dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="@string/btn_share_profile"
+            android:textAllCaps="false"
+            android:textColor="@color/button_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/button_bg"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnEditProfile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/btnEditProfile"
+            app:layout_constraintTop_toTopOf="@+id/btnEditProfile" />
+
+        <!-- Section Divider -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEditProfile" />
+
+        <!-- 3-Column Post Grid: Row 1, Column 1 (Kotlin) -->
+        <ImageView
+            android:id="@+id/imgPost1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="1dp"
+            android:contentDescription="@string/cd_post_1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/kotlin"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/imgPost2"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <!-- 3-Column Post Grid: Row 1, Column 2 (Java) -->
+        <ImageView
+            android:id="@+id/imgPost2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:contentDescription="@string/cd_post_2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/java"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPost1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/imgPost3"
+            app:layout_constraintStart_toEndOf="@+id/imgPost1"
+            app:layout_constraintTop_toTopOf="@+id/imgPost1" />
+
+        <!-- 3-Column Post Grid: Row 1, Column 3 (Python) -->
+        <ImageView
+            android:id="@+id/imgPost3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:contentDescription="@string/cd_post_3"
+            android:scaleType="centerCrop"
+            android:src="@drawable/python"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPost1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgPost2"
+            app:layout_constraintTop_toTopOf="@+id/imgPost1" />
+
+        <!-- 3-Column Post Grid: Row 2, Column 1 (HTML) -->
+        <ImageView
+            android:id="@+id/imgPost4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="@string/cd_post_4"
+            android:scaleType="centerCrop"
+            android:src="@drawable/html"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/imgPost1"
+            app:layout_constraintStart_toStartOf="@+id/imgPost1"
+            app:layout_constraintTop_toBottomOf="@+id/imgPost1" />
+
+        <!-- 3-Column Post Grid: Row 2, Column 2 (MySQL) -->
+        <ImageView
+            android:id="@+id/imgPost5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/cd_post_5"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mysql"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPost4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/imgPost2"
+            app:layout_constraintStart_toStartOf="@+id/imgPost2"
+            app:layout_constraintTop_toTopOf="@+id/imgPost4" />
+
+        <!-- 3-Column Post Grid: Row 2, Column 3 (React) -->
+        <ImageView
+            android:id="@+id/imgPost6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/cd_post_6"
+            android:scaleType="centerCrop"
+            android:src="@drawable/react"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPost4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/imgPost3"
+            app:layout_constraintStart_toStartOf="@+id/imgPost3"
+            app:layout_constraintTop_toTopOf="@+id/imgPost4" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

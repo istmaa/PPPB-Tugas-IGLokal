@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">IG Local</string>
+    <string name="app_title">IG.LOCAL</string>
+    <string name="username">istmaaaa_</string>
+    <string name="posts_text"><b>6</b> Posts</string>
+    <string name="followers_text"><b>373</b> Followers</string>
+    <string name="following_text"><b>444</b> Following</string>
+    <string name="profile_name">Haydar Istma Ulhaq</string>
+    <string name="bio_text">Software Engineering Student\nUniversitas Gadjah Mada\nUGM \'25</string>
+    <string name="btn_edit_profile">Edit Profile</string>
+    <string name="btn_share_profile">Share Profile</string>
+    <string name="cd_profile_picture">Profile Picture</string>
+    <string name="cd_post_1">Post 1 - Kotlin</string>
+    <string name="cd_post_2">Post 2 - Java</string>
+    <string name="cd_post_3">Post 3 - Python</string>
+    <string name="cd_post_4">Post 4 - HTML</string>
+    <string name="cd_post_5">Post 5 - MySQL</string>
+    <string name="cd_post_6">Post 6 - React</string>
 </resources>
