@@ -2,6 +2,12 @@
     <string name="app_name">IG Local</string>
     <string name="app_title">IG.LOCAL</string>
     <string name="username">istmaaaa_</string>
+    <string name="posts_count">6</string>
+    <string name="posts_label">Posts</string>
+    <string name="followers_count">373</string>
+    <string name="followers_label">Followers</string>
+    <string name="following_count">444</string>
+    <string name="following_label">Following</string>
     <string name="posts_text"><b>6</b> Posts</string>
     <string name="followers_text"><b>373</b> Followers</string>
     <string name="following_text"><b>444</b> Following</string>

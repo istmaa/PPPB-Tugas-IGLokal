@@ -7,4 +7,6 @@
     <color name="button_bg">#FFEFEFEF</color>
     <color name="button_text">#FF000000</color>
     <color name="divider">#FFDBDBDB</color>
+    <color name="post_border">#FFE0E0E0</color>
+    <color name="post_bg">#FFFFFFFF</color>
 </resources>
