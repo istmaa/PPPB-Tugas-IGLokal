@@ -35,8 +35,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="14dp"
             android:background="@drawable/circle_background"
+            android:clickable="true"
             android:clipToOutline="true"
             android:contentDescription="@string/cd_profile_picture"
+            android:focusable="true"
             android:scaleType="centerCrop"
             android:src="@drawable/profile"
             app:layout_constraintStart_toStartOf="parent"
@@ -336,18 +338,15 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="2dp"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/post_cell_border"
             android:contentDescription="@string/cd_post_4"
             android:padding="14dp"
             android:scaleType="centerInside"
             android:src="@drawable/html"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="@+id/imgPost1"
             app:layout_constraintStart_toStartOf="@+id/imgPost1"
-            app:layout_constraintTop_toBottomOf="@+id/imgPost1"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/imgPost1" />
 
         <!-- 3-Column Post Grid: Row 2, Column 2 (MySQL) -->
         <ImageView
@@ -380,6 +379,105 @@
             app:layout_constraintEnd_toEndOf="@+id/imgPost3"
             app:layout_constraintStart_toStartOf="@+id/imgPost3"
             app:layout_constraintTop_toTopOf="@+id/imgPost4" />
+
+        <!-- 3-Column Post Grid: Row 3, Column 1 (TypeScript) -->
+        <ImageView
+            android:id="@+id/imgPost7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/post_cell_border"
+            android:contentDescription="@string/cd_post_7"
+            android:padding="14dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ts"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/imgPost1"
+            app:layout_constraintStart_toStartOf="@+id/imgPost1"
+            app:layout_constraintTop_toBottomOf="@+id/imgPost4" />
+
+        <!-- 3-Column Post Grid: Row 3, Column 2 (Godot) -->
+        <ImageView
+            android:id="@+id/imgPost8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/post_cell_border"
+            android:contentDescription="@string/cd_post_8"
+            android:padding="16dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/godot"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPost7"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/imgPost2"
+            app:layout_constraintStart_toStartOf="@+id/imgPost2"
+            app:layout_constraintTop_toTopOf="@+id/imgPost7" />
+
+        <!-- 3-Column Post Grid: Row 3, Column 3 (JavaScript) -->
+        <ImageView
+            android:id="@+id/imgPost9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/post_cell_border"
+            android:contentDescription="@string/cd_post_9"
+            android:padding="14dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/js"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPost7"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/imgPost3"
+            app:layout_constraintStart_toStartOf="@+id/imgPost3"
+            app:layout_constraintTop_toTopOf="@+id/imgPost7" />
+
+        <!-- 3-Column Post Grid: Row 4, Column 1 (Next.js) -->
+        <ImageView
+            android:id="@+id/imgPost10"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/post_cell_border"
+            android:contentDescription="@string/cd_post_10"
+            android:padding="14dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/nextjs"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/imgPost1"
+            app:layout_constraintStart_toStartOf="@+id/imgPost1"
+            app:layout_constraintTop_toBottomOf="@+id/imgPost7"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <!-- 3-Column Post Grid: Row 4, Column 2 (CSS) -->
+        <ImageView
+            android:id="@+id/imgPost11"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/post_cell_border"
+            android:contentDescription="@string/cd_post_11"
+            android:padding="16dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/css"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPost10"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/imgPost2"
+            app:layout_constraintStart_toStartOf="@+id/imgPost2"
+            app:layout_constraintTop_toTopOf="@+id/imgPost10" />
+
+        <!-- 3-Column Post Grid: Row 4, Column 3 (PHP) -->
+        <ImageView
+            android:id="@+id/imgPost12"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/post_cell_border"
+            android:contentDescription="@string/cd_post_12"
+            android:padding="16dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/php"
+            app:layout_constraintBottom_toBottomOf="@+id/imgPost10"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/imgPost3"
+            app:layout_constraintStart_toStartOf="@+id/imgPost3"
+            app:layout_constraintTop_toTopOf="@+id/imgPost10" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

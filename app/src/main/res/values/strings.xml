@@ -2,13 +2,13 @@
     <string name="app_name">IG Local</string>
     <string name="app_title">IG.LOCAL</string>
     <string name="username">istmaaaa_</string>
-    <string name="posts_count">6</string>
+    <string name="posts_count">12</string>
     <string name="posts_label">Posts</string>
     <string name="followers_count">373</string>
     <string name="followers_label">Followers</string>
     <string name="following_count">444</string>
     <string name="following_label">Following</string>
-    <string name="posts_text"><b>6</b> Posts</string>
+    <string name="posts_text"><b>12</b> Posts</string>
     <string name="followers_text"><b>373</b> Followers</string>
     <string name="following_text"><b>444</b> Following</string>
     <string name="profile_name">Haydar Istma Ulhaq</string>
@@ -22,4 +22,23 @@
     <string name="cd_post_4">Post 4 - HTML</string>
     <string name="cd_post_5">Post 5 - MySQL</string>
     <string name="cd_post_6">Post 6 - React</string>
+    <string name="cd_post_7">Post 7 - TypeScript</string>
+    <string name="cd_post_8">Post 8 - Godot</string>
+    <string name="cd_post_9">Post 9 - JavaScript</string>
+    <string name="cd_post_10">Post 10 - Next.js</string>
+    <string name="cd_post_11">Post 11 - CSS</string>
+    <string name="cd_post_12">Post 12 - PHP</string>
+
+    <!-- Edit Profile Activity Strings -->
+    <string name="title_edit_profile">Edit Profil</string>
+    <string name="label_name">Nama</string>
+    <string name="label_bio">Bio</string>
+    <string name="hint_name">Masukkan nama</string>
+    <string name="hint_bio">Masukkan bio</string>
+    <string name="btn_save">Simpan</string>
+
+    <!-- Profile Photo Activity Strings -->
+    <string name="title_profile_photo">Foto Profil</string>
+    <string name="btn_back">Kembali</string>
+    <string name="cd_profile_photo_large">Foto Profil Besar</string>
 </resources>
