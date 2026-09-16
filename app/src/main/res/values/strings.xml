@@ -31,8 +31,10 @@
 
     <!-- Edit Profile Activity Strings -->
     <string name="title_edit_profile">Edit Profil</string>
+    <string name="label_username">Username</string>
     <string name="label_name">Nama</string>
     <string name="label_bio">Bio</string>
+    <string name="hint_username">Masukkan username</string>
     <string name="hint_name">Masukkan nama</string>
     <string name="hint_bio">Masukkan bio</string>
     <string name="btn_save">Simpan</string>

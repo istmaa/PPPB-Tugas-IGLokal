@@ -15,10 +15,12 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        const val EXTRA_NAME = "EXTRA_NAME"
-        const val EXTRA_BIO = "EXTRA_BIO"
+        const val EXTRA_USERNAME = "extra_username"
+        const val EXTRA_NAME = "extra_name"
+        const val EXTRA_BIO = "extra_bio"
     }
 
+    private var currentUsername: String = ""
     private var currentName: String = ""
     private var currentBio: String = ""
 
@@ -27,9 +29,14 @@ class MainActivity : AppCompatActivity() {
     ) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             val data = result.data
+            val updatedUsername = data?.getStringExtra(EXTRA_USERNAME)
             val updatedName = data?.getStringExtra(EXTRA_NAME)
             val updatedBio = data?.getStringExtra(EXTRA_BIO)
 
+            if (!updatedUsername.isNullOrEmpty()) {
+                currentUsername = updatedUsername
+                findViewById<TextView>(R.id.tvUsername).text = updatedUsername
+            }
             if (!updatedName.isNullOrEmpty()) {
                 currentName = updatedName
                 findViewById<TextView>(R.id.tvProfileName).text = updatedName
@@ -53,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val imgProfile = findViewById<ImageView>(R.id.imgProfile)
+        val tvUsername = findViewById<TextView>(R.id.tvUsername)
         val tvProfileName = findViewById<TextView>(R.id.tvProfileName)
         val tvBio = findViewById<TextView>(R.id.tvBio)
         val btnEditProfile = findViewById<Button>(R.id.btnEditProfile)
@@ -61,11 +69,14 @@ class MainActivity : AppCompatActivity() {
 
         // Initialize state or restore from savedInstanceState
         if (savedInstanceState != null) {
+            currentUsername = savedInstanceState.getString(EXTRA_USERNAME, tvUsername.text.toString())
             currentName = savedInstanceState.getString(EXTRA_NAME, tvProfileName.text.toString())
             currentBio = savedInstanceState.getString(EXTRA_BIO, tvBio.text.toString())
+            tvUsername.text = currentUsername
             tvProfileName.text = currentName
             tvBio.text = currentBio
         } else {
+            currentUsername = tvUsername.text.toString()
             currentName = tvProfileName.text.toString()
             currentBio = tvBio.text.toString()
         }
@@ -81,6 +92,7 @@ class MainActivity : AppCompatActivity() {
         // Edit Profile navigation via Activity Result Launcher
         btnEditProfile.setOnClickListener {
             val intent = Intent(this@MainActivity, EditProfileActivity::class.java).apply {
+                putExtra(EXTRA_USERNAME, currentUsername)
                 putExtra(EXTRA_NAME, currentName)
                 putExtra(EXTRA_BIO, currentBio)
             }
@@ -90,6 +102,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
+        outState.putString(EXTRA_USERNAME, currentUsername)
         outState.putString(EXTRA_NAME, currentName)
         outState.putString(EXTRA_BIO, currentBio)
     }
